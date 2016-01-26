@@ -14,6 +14,11 @@ class Migration(migrations.Migration):
     operations = [
         migrations.AddField(
             model_name='failureline',
+            name='best_classification',
+            field=treeherder.model.fields.FlexibleForeignKey(related_name='best_for_lines', to='model.ClassifiedFailure', null=True),
+        ),
+        migrations.AddField(
+            model_name='failureline',
             name='best_is_verified',
             field=models.BooleanField(default=False),
         ),
