@@ -12,15 +12,6 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
-        migrations.RemoveField(
-            model_name='failurematch',
-            name='is_best',
-        ),
-        migrations.AddField(
-            model_name='failureline',
-            name='best_classification',
-            field=treeherder.model.fields.FlexibleForeignKey(related_name='best_for_lines', to='model.ClassifiedFailure', null=True),
-        ),
         migrations.AddField(
             model_name='failureline',
             name='best_is_verified',
