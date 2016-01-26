@@ -11,7 +11,7 @@ Configuration
 -------------
 
 To specify the exchanges to read from, you can set environment variables in
-Vagrant, or in your ``config/settings_local.py`` file.  For example::
+Vagrant, or in your ``config/settings_local.py`` file.   For example::
 
     PULSE_DATA_INGESTION_EXCHANGES = [
         {
