@@ -420,6 +420,11 @@ DATABASES = {
     'read_only': env.db_url('DATABASE_URL_RO')
 }
 
+# db connection max age just under mysql ``wait_timeout`` setting so that
+# django will create new connections before mysql times out:
+# https://docs.djangoproject.com/en/1.8/ref/settings/#conn-max-age
+CONN_MAX_AGE = env.int("CONN_MAX_AGE", default=599)
+
 # Setup ssl connection for aws rds.
 # Can be removed when django-environ supports setting this:
 # https://github.com/joke2k/django-environ/issues/72
