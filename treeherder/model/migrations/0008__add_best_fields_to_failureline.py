@@ -12,11 +12,12 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
-        migrations.AddField(
-            model_name='failureline',
-            name='best_classification',
-            field=treeherder.model.fields.FlexibleForeignKey(related_name='best_for_lines', to='model.ClassifiedFailure', null=True),
-        ),
+        # SQL: ALTER TABLE `failure_line` ADD COLUMN `best_classification_id` bigint NULL
+        # migrations.AddField(
+        #     model_name='failureline',
+        #     name='best_classification',
+        #     field=treeherder.model.fields.FlexibleForeignKey(related_name='best_for_lines', to='model.ClassifiedFailure', null=True),
+        # ),
         migrations.AddField(
             model_name='failureline',
             name='best_is_verified',
